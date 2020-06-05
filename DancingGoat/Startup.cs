@@ -74,7 +74,8 @@ namespace DancingGoat
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-
+            app.UseStatusCodePagesWithReExecute("/es-ES/Errors/NotFound"); // Error page jsut in english
+            app.UseRequestLocalization("en-US", "es-ES");
             app.UseSerilogRequestLogging();
 
             app.UseHttpsRedirection();
@@ -83,7 +84,7 @@ namespace DancingGoat
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseRequestLocalization("en-US", "es-ES");
+           
            
             app.UseEndpoints(endpoints =>
             {
